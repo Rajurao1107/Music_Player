@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+body{
+
+  background :#000000 ;
+  margin :0px;
+  overflow :hidden ;
+  color:white ;
+  font-style :;
+  }
+.con{
+  position :absolute ;
+  background-image: ;
+  width :100%;
+  height :660px;
+  filter: blur(30px);
+  -webkit-filter: blur(50px);
+  background-repeat:no-repeat ;
+  background-position :center ;
+  background-size :cover ;
+  overflow :hidden ;
+}
+nav{
+  position:relative ;
+  width :100%;
+  height :50px ;
+  background : ;
+  display :flex ;
+}
+.text{
+  position :absolute ;
+    left :50%;
+    top :50%;
+    width :100%;
+ transform :translate(-50%,-50%);
+  display :flex ;
+  flex-direction: column;
+  align-items :center ;
+}
+#disco{
+  position :relative ;
+  width :280px;
+  height :280px;
+  left:35px;
+}
+#disco img{
+  position :absolute ;
+    left :50%;
+    top :50%;
+ transform :translate(-50%,-50%);
+  border-radius :100%;
+}
+@keyframes disco{
+  0%{
+    transform :rotate(0deg);
+  }
+  100%{
+    transform :rotate(360deg);
+  }
+}
+input[type="range"]{
+  position :relative ;
+  -webkit-appearance:none ;
+  -webkit-transition: none ;
+  outline : none;
+  transition :opacity 0.2s;
+  width :260px;
+  height :2px;
+  background :white ;
+  right :5px;
+  overflow :hidden ;
+   
+}
+input[type="range"]::-webkit-slider-thumb{
+  position :relative ;
+  -webkit-appearance :none ;
+  appearance : none;
+  width :0px;
+  height :0px;
+  background :white ;
+  border-radius :50px ;
+  box-shadow: -150px 0px 0px 150px red;
+}
+
+.play{
+  position :relative ;
+  width :50px ;
+  height :50px ;
+  background :red ;
+  border-radius :50px 0px 0px 50px ;
+}
+  input[type="checkbox"]{
+    position :relative ;
+    width :30px;
+    height :30px;
+    left :45%;
+    background-size:cover ; 
+    background-image :url("play.png");
+    -webkit-appearance: none ;
+    transition :.1s;
+    
+  }
+  input:checked[type="checkbox"] {
+    position :relative ;
+    width :30px;
+    height :30px;
+    background-image :url("pause.png");
+  }
+.weight {
+  position :absolute ;
+  left :80%;
+  top :10%;
+  z-index :1 ;
+}
+.progress {
+  position :relative ;
+  display :flex ;
+  align-items :center ;
+  justify-content :center ;
+  justify-content :space-evenly ;
+  font-size :10px;
+  color :white ;
+}
+#weight{
+  position :fixed ;
+left :72%;
+top :3%;
+transform :rotate(-50deg)translate(-15px,40px);
+  width :90px ;
+  height :90px ;
+  z-index :1 ;
+  transition :.8s;
+}
+.controls{
+  position :absolute ;
+left :50%;
+top :81.5%;
+transform :translate(-50%,-50%);
+  display :flex ;
+  gap:130px ;
+  overflow :hidden ;
+}
+.controls img{
+  position :relative ;
+  width :30px;
+  height :30px;
+}
+.controls1{
+  position :absolute ;
+left :50%;
+top :81.5%;
+transform :translate(-50%,-50%);
+  display :flex ;
+  gap:280px ;
+  overflow :hidden ;
+}
+.controls1 img{
+  position :relative ;
+  width :20px;
+  height :20px;
+}
+.controls2{
+  position :absolute ;
+left :50%;
+top :93%;
+transform :translate(-50%,-50%);
+  display :flex ;
+  gap:60px ;
+  overflow :hidden ;
+}
+.controls2 img{
+  position :relative ;
+  width :20px;
+  height :20px;
+}
+</style>
+<body>
+ 
+
+  <nav>
+
+    <a href="MusicList.html"><img src="back.png" style="width:25px; height:25px; position:relative; top:10px; left:10px; cursor:pointer ;"></a>
+    <div class="text">
+      <marquee scrollamount="3" style="color :black; font-size:20px; width:70%; color:white ;" >Tera Hoke Rahoon (PagalWorld.com)</marquee>
+      <marquee scrollamount="0" style="color :black; font-size:12px; width:20%; color:white ;">Arijit Singh</marquee>
+    </div>
+  </nav><br><br>
+      <img src="discWeight.png" id="weight" >
+  <disc>
+    <div class="disc" id="disco">
+    <img src="record.png" width="280px" height="280px"><img src="imgDisk.jpg" width="200px" height="200px" >
+    </div>
+  </disc><br><br><br><br>
+  <div class="progress">
+      <p id="timer">00:00</p><input type="range" min="0" max="100" value="0"><p >3:24</p>
+    </div> 
+  <div class="controls">
+      <img src="backward.png" alt="">
+      <img src="forward.png" alt="">
+    </div>
+    <div class="controls1">
+      <img src="shuffle.png" alt="">
+      <a href="MusicList.html"><img src="list.png" alt=""></a>
+    </div>
+     <div class="controls2">
+       <img src="heart.png" alt="">
+       <img src="delete.png" alt="">
+       <img src="share.png" alt="">
+       <img src="more.png" alt="">
+     </div>
+  <br><br><br>
+<input type="checkbox" id="modeBtn">
+    <audio id="audio14" controls hidden src="song14.mp3"></audio>
+    
+  
+  
+    <script>
+    
+      const modeBtn = document.getElementById('modeBtn');
+      const body = document.body;
+
+      modeBtn.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) 
+        {
+          document.getElementById("audio14").play(); 
+          document.getElementById("disco").style.animation = "disco 3s linear infinite";
+          document.getElementById("weight").style.transform = "rotate(0deg)translate(-15px,40px)"; 
+          startTimer();
+        } 
+        else 
+        {
+          document.getElementById("audio14").pause(); 
+          document.getElementById("disco").style.animation = "disco 0s linear infinite";
+          document.getElementById("weight").style.transform = "rotate(-50deg)translate(-15px,40px)";
+          pauseTimer();
+        }
+      });
+      
+      var timerElement = document.getElementById('timer');
+    var timerInterval;
+    var seconds = 0;
+  
+    function startTimer() {
+      
+      // Clear any existing interval to prevent multiple timers running simultaneously
+      clearInterval(timerInterval);
+  
+      // Start the timer
+      timerInterval = setInterval(updateTimer, 1000);
+      
+    }
+  
+    function pauseTimer() {
+      
+      // Stop the timer by clearing the interval
+      clearInterval(timerInterval);
+    }
+  
+    function resetTimer() {
+      // Stop the timer and reset the seconds variable
+      clearInterval(timerInterval);
+      seconds = 0;
+      updateTimer();
+    }
+  
+    function updateTimer() {
+      seconds++;
+      var minutes = Math.floor(seconds / 60);
+      var remainingSeconds = seconds % 60;
+  
+      // Add leading zero if necessary
+      if (remainingSeconds < 10) {
+        remainingSeconds = '0' + remainingSeconds;
+      }
+      if (minutes < 10) {
+        minutes = '0' + minutes ;
+      }
+  
+      timerElement.textContent = minutes + ':' + remainingSeconds;
+    }
+      
+      
+      var player = document.querySelector('audio');
+var progress = document.querySelector('.progress input');
+
+player.addEventListener('play', function() {
+  progress.max = player.duration;
+});
+
+player.addEventListener('timeupdate', function() {
+  progress.value = player.currentTime;
+});
+
+
+
+
+    </script>
+</body>
+
+</html>

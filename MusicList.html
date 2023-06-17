@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>
+body{
+  margin :0px;
+}
+nav{
+  position :fixed ;
+  width :100%;
+  height :50px ;
+  z-index :1 ;
+  background :#f8f8f8 ;
+  border-bottom :.5px solid lightgray ;
+  display :flex ;
+  align-items :center ;
+  justify-content :center ;
+  font-style: sans-serif ;
+  font-size :18px ;
+  font-weight :bold ;
+}
+nav img{
+  position :relative ;
+  width :20px;
+  height :20px;
+  right :120px;
+}
+shuffle{
+  position :relative ;
+  width :100%;
+  height :40px ;
+  display :flex ;
+  justify-content :space-between ;
+  padding-top:50px ;
+
+}
+shuffle button {
+  position :relative ;
+  height :40px ;
+  width :200px ;
+  border: .5px solid lightgray ;
+  background :inherit ;
+  cursor: pointer;
+  display :flex ;
+  justify-content :center ;
+  align-items :center ;
+  gap:10px ;
+}
+  main{
+    position :fixed ;
+    left :0%;
+    top :100%;
+ transform :translate(-0%,-55px);
+    width :100%;
+    height :55px ;
+    background :#660000 ;
+    display :flex ;
+    align-items :center ;
+    justify-content :space-around ;
+  }
+  .list{
+    position :relative ;
+    padding-bottom: 50px ;
+    padding-left :15px ;
+  }
+  .list button{
+    position :relative ;
+    width :100%;
+    height :50px ;
+    background :white ;
+    border :hidden ;
+    cursor :pointer ;
+    border-bottom:.5px solid lightgray ;
+    font-style :sans-serif ;
+    font-size :18px ;
+    text-align :left ;
+    line-height :0px ;
+  }
+  .list button .artist {
+    color:gray;
+    font-size :15px;
+  }
+  input[type="checkbox"]{
+    position :relative ;
+    width :25px;
+    height :25px;
+    left :0%;
+    background-size:cover ; 
+    background-image :url("play.png");
+    
+    -webkit-appearance: none ;
+    transition :.1s;
+    
+  }
+  input:checked[type="checkbox"] {
+    position :relative ;
+    width :25px;
+    height :25px;
+    background-image :url("pause.png");
+  }
+</style>
+<body>
+  
+  <nav><p style="position:relative; right:10px;">Sadness</p></nav>
+  <shuffle><button><img src="shuffle.png" width="15px" height="15px">Shuffle</button><button><img src="plus.png" width="15px" height="15px">Manage Songs</button></shuffle>
+  <div class="list">
+   <button onclick="touchmenow1()"><p>Lily - Alan Walker Mp3 Song(New...</p><p class="artist">Newdjsongremix.com</p></button>
+    <button onclick="touchmenow2()"><p>Indila - Love Story</p><p class="artist">unknown artist</p></button>
+    <button onclick="touchmenow3()"><p>Play Date(PaglaSongs)</p><p class="artist">PaglaSongs.com</p></button>
+    <button onclick="touchmenow4()"><p>Nish_-_Standing_By_You_(Duniya...</p><p class="artist">unknown artist</p></button>
+    <button onclick="touchmenow5()"><p>Carol Of The Bells</p><p class="artist">Naasongs.one</p></button>
+    <button onclick="touchmenow6()"><p>Yeh Fitoor Mera</p><p class="artist">music.youtube.com</p></button>
+    <button onclick="touchmenow7()"><p>Shiddat_Title_song_Track</p><p class="artist">unknown artist</p></button>
+    <button onclick="touchmenow8()"><p>01. Kun Faya Kun</p><p class="artist">Rehman, Javed Ali, Mohit Chauhan</p></button>
+    <button onclick="touchmenow9()"><p>Teri Dastaan - JioSongs.com</p><p class="artist">Jasleen Royal</p></button>
+    <button onclick="touchmenow10()"><p>Jo Tu Na Mila - PagalWorld.io</p><p class="artist">Asim Azhar</p></button>
+    <button onclick="touchmenow11()"><p>Asal Mein PagalWorld.mobi</p><p class="artist">Darshan Raval - PagalWorld.mobi</p></button>
+    <button onclick="touchmenow12()"><p>Khairiyat (Sad) (PagalWorld.Link)</p><p class="artist">Arijit Singh (PagalWorld.Link)</p></button>
+    <button onclick="touchmenow13()"><p>Duniya - PagalWorld.io</p><p class="artist">Akhil, Dhvni Bhanushali - PagalWorld.io</p></button>
+   
+  </div>
+
+<main>
+  
+<a href="music.html">
+  <img src="imgDisk.jpg" width="40px" height="40px" style="border-radius:50px; position:relative; right:10px;">
+ </a>
+  <p style="color:white ;">Tera Hoke Rahoon</p>
+  <input type="checkbox" id="modeBtn">
+    <img src="forward.png" width="20px" height="20px" style="border-radius:0px; position:relative; left:0%;">
+  
+  </main>
+    <audio id="audio1" controls hidden src="song1.mp3"></audio>
+    <audio id="audio2" controls hidden src="song2.mp3"></audio>
+    <audio id="audio3" controls hidden src="song3.mp3"></audio>
+    <audio id="audio4" controls hidden src="song4.mp3"></audio>
+    <audio id="audio5" controls hidden src="song5.mp3"></audio>
+    <audio id="audio6" controls hidden src="song6.mp3"></audio>
+    <audio id="audio7" controls hidden src="song7.mp3"></audio>
+    <audio id="audio8" controls hidden src="song8.mp3"></audio>
+    <audio id="audio9" controls hidden src="song9.mp3"></audio>
+    <audio id="audio10" controls hidden src="song10.mp3"></audio>
+    <audio id="audio11" controls hidden src="song11.mp3"></audio>
+    <audio id="audio12" controls hidden src="song12.mp3"></audio>
+    <audio id="audio13" controls hidden src="song13.mp3"></audio>
+    <audio id="audio14" controls hidden src="song14.mp3"></audio>
+    
+    <script>
+    function touchmenow1(){
+      document.getElementById("audio1").play();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow2(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").play();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow3(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").play();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow4(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").play();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow5(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").play();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow6(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").play();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow7(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").play();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow8(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").play();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow9(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").play();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow10(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").play();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow11(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").play();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow12(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").play();
+      document.getElementById("audio13").pause();
+    }
+    function touchmenow13(){
+      document.getElementById("audio1").pause();
+      document.getElementById("audio2").pause();
+      document.getElementById("audio3").pause();
+      document.getElementById("audio4").pause();
+      document.getElementById("audio5").pause();
+      document.getElementById("audio6").pause();
+      document.getElementById("audio7").pause();
+      document.getElementById("audio8").pause();
+      document.getElementById("audio9").pause();
+      document.getElementById("audio10").pause();
+      document.getElementById("audio11").pause();
+      document.getElementById("audio12").pause();
+      document.getElementById("audio13").play();
+    }
+    
+      const modeBtn = document.getElementById('modeBtn');
+      const body = document.body;
+
+      modeBtn.addEventListener('click', function touchmenow() {
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) 
+        {
+          document.getElementById("audio14").play(); 
+          document.getElementById("disco").style.animation = "disco 3s linear infinite";
+           
+        } 
+        else 
+        {
+          document.getElementById("audio14").pause(); 
+          document.getElementById("disco").style.animation = "disco 0s linear infinite";
+        }
+      });
+    </script>
+</body>
+</html>
